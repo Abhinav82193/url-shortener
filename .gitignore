@@ -1,0 +1,93 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+# === Default Spring Boot + Maven + IDE junk ===
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+mvnw
+mvnw.cmd
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# === YE SABSE ZAROORI HAIN - SENSITIVE CHEEZ KABHI GITHUB PE NAHI JAAYEGI ===
+# Database credentials / passwords
+application-prod.properties
+application-local.properties
+application-dev.properties
+application-secret.properties
+
+# Environment files
+.env
+.env.local
+.env.*
+
+# H2 file-based database (agar kabhi use kiya)
+*.mv.db
+*.trace.db
+
+# Local logs
+*.log
+logs/
+
+# OS junk
+.DS_Store
+Thumbs.db
