@@ -11,10 +11,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable()) 
-            .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()))  // <-- IMPORTANT for H2 Console
+            .csrf(csrf -> csrf.disable())
+            // H2 console safe + local mein chalega
+            .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()))
             .authorizeHttpRequests(auth -> auth
-                .anyRequest().permitAll()
+                .requestMatchers("/h2-console/**").permitAll()      // H2 console
+                .requestMatchers("/actuator/**").permitAll()        // monitoring
+                .requestMatchers("/api/shorten").permitAll()        // shorten API
+                .requestMatchers("/{shortCode:[a-zA-Z0-9_-]+}").permitAll() // redirect
+                .anyRequest().denyAll()  // ← baaki sab block (100% safe)
             )
             .formLogin(form -> form.disable())
             .httpBasic(basic -> basic.disable());
