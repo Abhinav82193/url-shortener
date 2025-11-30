@@ -19,7 +19,7 @@ public class SecurityConfig {
                 .requestMatchers("/actuator/**").permitAll()        // monitoring
                 .requestMatchers("/api/shorten").permitAll()        // shorten API
                 .requestMatchers("/{shortCode:[a-zA-Z0-9_-]+}").permitAll() // redirect
-                .anyRequest().denyAll()  // ← baaki sab block (100% safe)
+                .anyRequest().denyAll() 
             )
             .formLogin(form -> form.disable())
             .httpBasic(basic -> basic.disable());
