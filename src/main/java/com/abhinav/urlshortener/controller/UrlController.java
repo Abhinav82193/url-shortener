@@ -16,6 +16,6 @@ public class UrlController {
     @PostMapping("/shorten")
     public String shorten(@RequestBody @NotBlank String originalUrl) {
         UrlEntity entity = urlService.shortenUrl(originalUrl);
-        return "http://localhost:8080/" + entity.getShortCode();  // baad mein custom domain kar denge
+        return "http://localhost:8080/" + entity.getShortCode();  
     }
 }
