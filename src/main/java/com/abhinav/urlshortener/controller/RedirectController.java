@@ -17,13 +17,13 @@ public class RedirectController {
 
     @GetMapping("/{shortCode}")
     public RedirectView redirect(@PathVariable String shortCode) {
-        String originalUrl = urlService.getOriginalUrl(shortCode);  // ← YE LINE CHANGE KI
+        String originalUrl = urlService.getOriginalUrl(shortCode); 
 
         if (originalUrl == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Link not found or expired");
         }
 
-        urlService.incrementClicks(shortCode);  // ← ye same rahega
+        urlService.incrementClicks(shortCode);  
 
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl(originalUrl);
